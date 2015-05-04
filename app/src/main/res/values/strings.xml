@@ -1,6 +1,22 @@
 <resources>
-    <string name="app_name">EducationalGameQuiz</string>
-
+    <string name="app_name">Тестване на въпросника</string>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Настройки</string>
+    <string name="title_activity_game_screen">прозорец на играта</string>
+    <string name="title_activity_end_game_screen">Край на играта</string>
+    <string name="title_activity_wrong_answer_screen">Грешен въпрос</string>
+    <string name="aButtonBlank">А: </string>
+    <string name="bButtonBlank">Б: </string>
+    <string name="cButtonBlank">В: </string>
+    <string name="dButtonBlank">Г: </string>
+    <string name="exit_button_text">Изход</string>
+    <string name="new_game_button_text">Нова игра</string>
+    <string name="overall_score_text">Вашият резултат е:</string>
+    <string name="points_text">точки</string>
+    <string name="home_screen_button_text">Начална страница</string>
+    <string name="default_congrats_text">Поздравления!</string>
+    <string name="current_question_default_text">Правилният отговор на въпроса:</string>
+    <string name="current_number_default_text">Въпрос номер:</string>
+    <string name="current_points_default_text">Точки:</string>
+    <string name="wrong_answer_text">Грешен отговор!</string>
 </resources>
