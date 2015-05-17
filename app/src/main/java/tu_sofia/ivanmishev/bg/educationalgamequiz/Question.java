@@ -2,6 +2,10 @@ package tu_sofia.ivanmishev.bg.educationalgamequiz;
 
 import android.widget.Switch;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.Random;
 
 /**
@@ -13,6 +17,12 @@ public class Question {
     private String wrongAnswer1="";
     private String wrongAnswer2="";
     private String wrongAnswer3="";
+    private String positionA="";
+    private String positionB="";
+    private String positionC="";
+    private String positionD="";
+
+
     private int difficulty = 1;
     private static boolean askAlienUsed= false;
     private static boolean askConsortiumUsed= false;
@@ -26,6 +36,7 @@ public class Question {
         this.wrongAnswer2 = wrongAnswer2;
         this.wrongAnswer3 = wrongAnswer3;
         this.difficulty = difficulty * RandomPointGeneratorForCurrentAnswer();
+        shuffleAnswer();
     }
 
 
@@ -138,6 +149,60 @@ public class Question {
 
     public void setDifficulty(int difficulty) {
         this.difficulty = difficulty;
+    }
+
+    public String getPositionA() {
+        return positionA;
+    }
+
+    public void setPositionA(String possitionA) {
+        this.positionA = possitionA;
+    }
+
+    public String getPositionB() {
+        return positionB;
+    }
+
+    public void setPositionB(String possitionB) {
+        this.positionB = possitionB;
+    }
+
+    public String getPositionC() {
+        return positionC;
+    }
+
+    public void setPositionC(String possitionC) {
+        this.positionC = possitionC;
+    }
+
+    public String getPositionD() {
+        return positionD;
+    }
+
+    public void setPositionD(String possitionD) {
+        this.positionD = possitionD;
+    }
+
+    public void shuffleAnswer(){
+
+        String[] allAnswers = {getRightAnswer(), getWrongAnswer1(),getWrongAnswer2(),getWrongAnswer3()};
+        ArrayList<String> allAnswersList = new ArrayList<String>(Arrays.asList(allAnswers));
+        Collections.shuffle(allAnswersList);
+        Iterator iterator = allAnswersList.iterator();
+
+
+        while(iterator.hasNext()){
+            if(getPositionA().equals("")){
+                setPositionA(iterator.next().toString());
+            }else if(getPositionB().equals("")){
+                setPositionB(iterator.next().toString());
+            }else if(getPositionC().equals("")){
+                setPositionC(iterator.next().toString());
+            }else{
+                setPositionD(iterator.next().toString());
+            }
+        }
+
     }
 
 //    //check for one wrong answer that will stay in object field

@@ -144,10 +144,10 @@ public class GameScreen extends Activity {
         randomPointsForCurrentAnswerText.setText("+" + questionsInList.getFirst().getDifficulty() +"pts");
         sessionQuestionCounterText.setText(questionNumber + " question");
         questionText.setText(questionsInList.getFirst().getQuestion());
-        aButton.setText(questionsInList.getFirst().getRightAnswer());
-        bButton.setText(questionsInList.getFirst().getWrongAnswer1());
-        cButton.setText(questionsInList.getFirst().getWrongAnswer2());
-        dButton.setText(questionsInList.getFirst().getWrongAnswer3());
+        aButton.setText(questionsInList.getFirst().getPositionA());
+        bButton.setText(questionsInList.getFirst().getPositionB());
+        cButton.setText(questionsInList.getFirst().getPositionC());
+        dButton.setText(questionsInList.getFirst().getPositionD());
 
     }
 
