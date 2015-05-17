@@ -1,0 +1,158 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="tu_sofia.ivanmishev.bg.educationalgamequiz.GameScreen"
+    android:orientation="vertical"
+    android:background="@drawable/quiz_background1"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="75dp"
+            android:text="Бластер"
+            android:textStyle="bold"
+            android:id="@+id/fiftyButton"
+            android:onClick="useMightyBlaster"
+            />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="75dp"
+            android:text="Мъдрец"
+            android:textStyle="bold"
+            android:id="@+id/friendButton"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:onClick="useWiseAlienButton"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="75dp"
+            android:text="Консорциум"
+            android:textStyle="bold"
+            android:id="@+id/crowdButton"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:onClick="useConsortiumButton"/>
+
+
+        <TextView
+            android:layout_width="75sp"
+            android:layout_height="75sp"
+            android:text="0 points"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:paddingTop="25sp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/sessionPointsText"
+            android:textColor="#ffffff"/>
+
+        <TextView
+            android:layout_width="75sp"
+            android:layout_height="75sp"
+            android:text="+14 points"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:paddingTop="25sp"
+            android:id="@+id/randomPointsForCurrentAnswerText"
+            android:textColor="#ffffff"/>
+
+        <TextView
+            android:layout_width="75sp"
+            android:layout_height="75sp"
+            android:text="1 question"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:paddingTop="25sp"
+            android:id="@+id/sessionQuestionCounterText"
+            android:textColor="#ffffff"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:gravity="center|fill_horizontal">
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Some Sort of veeeeeerrrryyyy long question goes here. More text for the question. Expanding is a msut!"
+            android:id="@+id/questionText"
+            android:textColor="#ffffff"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="top"
+        android:layout_gravity="top">
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="@string/aButtonBlank"
+                android:gravity="center"
+                android:id="@+id/aButton"
+                android:onClick="checkAnswer"
+                android:layout_weight="1"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="@string/bButtonBlank"
+                android:id="@+id/bButton"
+                android:onClick="checkAnswer"
+                android:layout_weight="1"
+
+                />
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:layout_gravity="bottom">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="@string/cButtonBlank"
+                android:id="@+id/cButton"
+                android:onClick="checkAnswer"
+                android:layout_weight="1"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="@string/dButtonBlank"
+                android:id="@+id/dButton"
+                android:onClick="checkAnswer"
+                android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</LinearLayout>
