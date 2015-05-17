@@ -131,7 +131,7 @@ public class GameScreen extends Activity {
 
 
     }
-    //TODO this method does not let user to answer to 50-th question and isEmpty never return true maybe because iterator
+    //TODO this method does not let user to answer to 50-th question and isEmpty never return true
     public void checkIfLastQuestion(){
         if(questionsInList.isEmpty() || questionNumber == 50){
             endGame();
@@ -141,7 +141,7 @@ public class GameScreen extends Activity {
     public void setCurrentQuestion(){
 
         sessionPointsText.setText(" "+getSessionPoints());
-        randomPointsForCurrentAnswerText.setText("+" + questionsInList.getFirst().getDifficulty() +"pts");
+        randomPointsForCurrentAnswerText.setText("+" + questionsInList.getFirst().getDifficulty() +" т.");
         sessionQuestionCounterText.setText(questionNumber + " question");
         questionText.setText(questionsInList.getFirst().getQuestion());
         aButton.setText(questionsInList.getFirst().getPositionA());
@@ -184,7 +184,7 @@ public class GameScreen extends Activity {
         return sessionPoints;
     }
 
-    //TODO maintaining session points from randomPointGeneratorForCurrentAnswer
+
     public void countSessionPoints() {
 
         sessionPoints = sessionPoints + questionsInList.getFirst().getDifficulty();
