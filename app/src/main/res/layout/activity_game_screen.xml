@@ -19,6 +19,7 @@
         <Button
             android:layout_width="100dp"
             android:layout_height="75dp"
+            android:textAllCaps="false"
             android:text="Бластер"
             android:textStyle="bold"
             android:id="@+id/fiftyButton"
@@ -29,6 +30,7 @@
         <Button
             android:layout_width="100dp"
             android:layout_height="75dp"
+            android:textAllCaps="false"
             android:text="Мъдрец"
             android:textStyle="bold"
             android:id="@+id/friendButton"
@@ -40,6 +42,7 @@
         <Button
             android:layout_width="100dp"
             android:layout_height="75dp"
+            android:textAllCaps="false"
             android:text="Консорциум"
             android:textStyle="bold"
             android:textSize="13sp"
@@ -90,7 +93,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:orientation="horizontal"
         android:gravity="center|fill_horizontal">
         <TextView
@@ -112,14 +115,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="bottom"
+        android:gravity="left|bottom"
         android:layout_gravity="bottom">
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:textAllCaps="false"
             android:text="@string/aButtonBlank"
-            android:gravity="center"
+            android:gravity="left|center"
+            android:paddingLeft="10dp"
             android:id="@+id/aButton"
             android:onClick="checkAnswer"
             android:singleLine="true"
@@ -128,7 +133,10 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:textAllCaps="false"
             android:text="@string/bButtonBlank"
+            android:gravity="left|center"
+            android:paddingLeft="10dp"
             android:id="@+id/bButton"
             android:onClick="checkAnswer"
             android:singleLine="true"
@@ -137,7 +145,10 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:textAllCaps="false"
             android:text="@string/cButtonBlank"
+            android:gravity="left|center"
+            android:paddingLeft="10dp"
             android:id="@+id/cButton"
             android:onClick="checkAnswer"
             android:singleLine="true"
@@ -146,7 +157,10 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:textAllCaps="false"
             android:text="@string/dButtonBlank"
+            android:gravity="left|center"
+            android:paddingLeft="10dp"
             android:id="@+id/dButton"
             android:onClick="checkAnswer"
             android:singleLine="true"

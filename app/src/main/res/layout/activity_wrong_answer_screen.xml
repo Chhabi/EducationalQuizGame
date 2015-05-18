@@ -58,6 +58,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:textAllCaps="false"
         android:layout_marginTop="20dp"
         android:text="@string/new_game_button_text"
         android:onClick="playAgain"
@@ -67,6 +68,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:textAllCaps="false"
         android:text="@string/home_screen_button_text"
         android:layout_marginTop="10dp"
         android:onClick="backToHome"

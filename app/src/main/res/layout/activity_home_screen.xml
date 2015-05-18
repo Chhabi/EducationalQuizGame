@@ -23,6 +23,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:textAllCaps="false"
         android:text="@string/new_game_button_text"
         android:textSize="15sp"
         android:padding="10dp"
@@ -36,6 +37,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:textAllCaps="false"
         android:text="@string/exit_button_text"
         android:textSize="15sp"
         android:padding="10dp"

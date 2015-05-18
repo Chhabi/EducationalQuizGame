@@ -95,6 +95,8 @@ public class GameScreen extends Activity {
 
         } while (questionsCursor.moveToNext());
 
+        questionsCursor.close();
+
         iterator = (ListIterator) questionsInList.iterator();
 
         setCurrentQuestion();
@@ -138,11 +140,11 @@ public class GameScreen extends Activity {
         }
     }
 
-    public void setCurrentQuestion(){
+    private void setCurrentQuestion(){
 
-        sessionPointsText.setText(" "+getSessionPoints());
+        sessionPointsText.setText("Точки: "+getSessionPoints());
         randomPointsForCurrentAnswerText.setText("+" + questionsInList.getFirst().getDifficulty() +" т.");
-        sessionQuestionCounterText.setText(questionNumber + " question");
+        sessionQuestionCounterText.setText(questionNumber + " въпрос.");
         questionText.setText(questionsInList.getFirst().getQuestion());
         aButton.setText(questionsInList.getFirst().getPositionA());
         bButton.setText(questionsInList.getFirst().getPositionB());
