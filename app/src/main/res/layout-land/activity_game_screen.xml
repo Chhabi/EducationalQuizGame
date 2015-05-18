@@ -42,7 +42,7 @@
             android:layout_height="75dp"
             android:text="Консорциум"
             android:textStyle="bold"
-            android:textSize="11sp"
+            android:textSize="13sp"
             android:id="@+id/crowdButton"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
@@ -132,9 +132,6 @@
                 android:layout_weight="1"
                 android:background="@drawable/custom_button"
                 />
-
-
-
 
         </LinearLayout>
 
