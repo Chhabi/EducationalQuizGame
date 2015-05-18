@@ -23,6 +23,7 @@
             android:textStyle="bold"
             android:id="@+id/fiftyButton"
             android:onClick="useMightyBlaster"
+            android:background="@drawable/custom_button"
             />
 
         <Button
@@ -33,17 +34,20 @@
             android:id="@+id/friendButton"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
-            android:onClick="useWiseAlienButton"/>
+            android:onClick="useWiseAlienButton"
+            android:background="@drawable/custom_button"/>
 
         <Button
             android:layout_width="100dp"
             android:layout_height="75dp"
             android:text="Консорциум"
             android:textStyle="bold"
+            android:textSize="11sp"
             android:id="@+id/crowdButton"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
-            android:onClick="useConsortiumButton"/>
+            android:onClick="useConsortiumButton"
+            android:background="@drawable/custom_button"/>
 
 
         <TextView
@@ -115,6 +119,7 @@
                 android:onClick="checkAnswer"
                 android:singleLine="true"
                 android:layout_weight="1"
+                android:background="@drawable/custom_button"
                 />
 
             <Button
@@ -125,7 +130,7 @@
                 android:onClick="checkAnswer"
                 android:singleLine="true"
                 android:layout_weight="1"
-
+                android:background="@drawable/custom_button"
                 />
 
 
@@ -146,7 +151,8 @@
                 android:id="@+id/cButton"
                 android:onClick="checkAnswer"
                 android:singleLine="true"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"/>
 
             <Button
                 android:layout_width="match_parent"
@@ -155,7 +161,8 @@
                 android:id="@+id/dButton"
                 android:onClick="checkAnswer"
                 android:singleLine="true"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"/>
 
     </LinearLayout>
 

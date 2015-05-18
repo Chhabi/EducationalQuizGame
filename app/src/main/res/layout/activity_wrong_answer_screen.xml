@@ -57,18 +57,21 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginTop="20dp"
         android:text="@string/new_game_button_text"
         android:onClick="playAgain"
-        android:id="@+id/playAgainButton"/>
+        android:id="@+id/playAgainButton"
+        android:background="@drawable/custom_button"/>
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:text="@string/home_screen_button_text"
+        android:layout_marginTop="10dp"
         android:onClick="backToHome"
-        android:id="@+id/homeButton"/>
+        android:id="@+id/homeButton"
+        android:background="@drawable/custom_button"/>
 
 
 </LinearLayout>

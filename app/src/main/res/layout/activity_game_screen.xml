@@ -23,6 +23,7 @@
             android:textStyle="bold"
             android:id="@+id/fiftyButton"
             android:onClick="useMightyBlaster"
+            android:background="@drawable/custom_button"
             />
 
         <Button
@@ -33,17 +34,21 @@
             android:id="@+id/friendButton"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
-            android:onClick="useWiseAlienButton"/>
+            android:onClick="useWiseAlienButton"
+            android:background="@drawable/custom_button"/>
 
         <Button
             android:layout_width="100dp"
             android:layout_height="75dp"
             android:text="Консорциум"
             android:textStyle="bold"
+            android:textSize="13sp"
             android:id="@+id/crowdButton"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
-            android:onClick="useConsortiumButton"/>
+            android:padding="1dp"
+            android:onClick="useConsortiumButton"
+            android:background="@drawable/custom_button"/>
     </LinearLayout>
 
     <LinearLayout
@@ -117,7 +122,8 @@
             android:gravity="center"
             android:id="@+id/aButton"
             android:onClick="checkAnswer"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:background="@drawable/custom_button"/>
 
         <Button
             android:layout_width="match_parent"
@@ -125,7 +131,8 @@
             android:text="@string/bButtonBlank"
             android:id="@+id/bButton"
             android:onClick="checkAnswer"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:background="@drawable/custom_button"/>
 
         <Button
             android:layout_width="match_parent"
@@ -133,7 +140,8 @@
             android:text="@string/cButtonBlank"
             android:id="@+id/cButton"
             android:onClick="checkAnswer"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:background="@drawable/custom_button"/>
 
         <Button
             android:layout_width="match_parent"
@@ -141,7 +149,8 @@
             android:text="@string/dButtonBlank"
             android:id="@+id/dButton"
             android:onClick="checkAnswer"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:background="@drawable/custom_button"/>
 
     </LinearLayout>
 
