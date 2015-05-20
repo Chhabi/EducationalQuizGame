@@ -19,4 +19,11 @@
     <string name="current_number_default_text">Въпрос номер:</string>
     <string name="current_points_default_text">Точки:</string>
     <string name="wrong_answer_text">Грешен отговор!</string>
+    <string name="myghty_blaster_button_text">Бластер</string>
+    <string name="wise_alien_button_text">Мъдрец</string>
+    <string name="consortium_button_text">Консорциум</string>
+    <string name="session_points_def_text">0 точки</string>
+    <string name="session_random_points_def_text">+14 т.</string>
+    <string name="session_q_counter_def_text">1 въпрос</string>
+    <string name="question_text_def_text">Some Sort of veeeeeerrrryyyy long question goes here. More text for the question. Expanding is a msut!</string>
 </resources>

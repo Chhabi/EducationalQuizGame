@@ -244,11 +244,11 @@ public class GameScreen extends Activity {
         alertDialog.show();
 
         fiftyButton.setClickable(false);
-        fiftyButton.setBackgroundResource(R.drawable.used);
-        fiftyButton.setText("");
-
-
+        fiftyButton.setBackgroundResource(R.drawable.button_pressed);
+        fiftyButton.setText("X");
     }
+
+
 
     public void useWiseAlienButton(View view) {
 
@@ -270,6 +270,7 @@ public class GameScreen extends Activity {
         alertDialog.show();
 
         friendButton.setClickable(false);
+        friendButton.setBackgroundResource(R.drawable.button_pressed);
         friendButton.setText("X");
 
     }
@@ -294,6 +295,7 @@ public class GameScreen extends Activity {
         alertDialog.show();
 
         crowdButton.setClickable(false);
+        crowdButton.setBackgroundResource(R.drawable.button_pressed);
         crowdButton.setText("X");
 
     }

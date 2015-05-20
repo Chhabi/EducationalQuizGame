@@ -21,7 +21,7 @@
             android:layout_height="70dp"
             android:textAllCaps="false"
             android:layout_marginLeft="20dp"
-            android:text="Бластер"
+            android:text="@string/myghty_blaster_button_text"
             android:textStyle="bold"
             android:id="@+id/fiftyButton"
             android:onClick="useMightyBlaster"
@@ -32,7 +32,7 @@
             android:layout_width="100dp"
             android:layout_height="75dp"
             android:textAllCaps="false"
-            android:text="Мъдрец"
+            android:text="@string/wise_alien_button_text"
             android:textStyle="bold"
             android:id="@+id/friendButton"
             android:layout_marginStart="20dp"
@@ -44,7 +44,7 @@
             android:layout_width="100dp"
             android:layout_height="75dp"
             android:textAllCaps="false"
-            android:text="Консорциум"
+            android:text="@string/consortium_button_text"
             android:textStyle="bold"
             android:textSize="13sp"
             android:id="@+id/crowdButton"
@@ -56,32 +56,32 @@
 
         <TextView
             android:layout_width="75sp"
-            android:layout_height="75sp"
-            android:text="0 points"
+            android:layout_height="25sp"
+            android:text="@string/session_points_def_text"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:paddingTop="25sp"
-            android:layout_marginLeft="20dp"
+            android:paddingTop="4sp"
+            android:layout_marginLeft="10dp"
             android:id="@+id/sessionPointsText"
             android:textColor="#ffffff"/>
 
         <TextView
             android:layout_width="75sp"
-            android:layout_height="75sp"
-            android:text="+14 points"
+            android:layout_height="25sp"
+            android:text="@string/session_random_points_def_text"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:paddingTop="25sp"
+            android:paddingTop="4sp"
             android:id="@+id/randomPointsForCurrentAnswerText"
             android:textColor="#ffffff"/>
 
         <TextView
             android:layout_width="75sp"
-            android:layout_height="75sp"
-            android:text="1 question"
+            android:layout_height="25sp"
+            android:text="@string/session_q_counter_def_text"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:paddingTop="25sp"
+            android:paddingTop="4dp"
             android:id="@+id/sessionQuestionCounterText"
             android:textColor="#ffffff"/>
     </LinearLayout>
@@ -94,12 +94,13 @@
         <TextView
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
+            android:textAllCaps="false"
             android:layout_marginLeft="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:text="Some Sort of veeeeeerrrryyyy long question goes here. More text for the question. Expanding is a msut!"
+            android:text="@string/question_text_def_text"
             android:id="@+id/questionText"
             android:textColor="#ffffff"
             />
