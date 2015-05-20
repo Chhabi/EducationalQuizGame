@@ -123,7 +123,6 @@ public class GameScreen extends Activity {
             countSessionPoints();
             setCurrentQuestion();
             iterator = (ListIterator) questionsInList.iterator();
-            //TODO check for last 50 question and after answer intent to EndGameScreen with proper message.
 
         } else {
             Toast.makeText(this, "Wrong answer", Toast.LENGTH_SHORT).show();
@@ -227,8 +226,6 @@ public class GameScreen extends Activity {
 
 
     public void useMightyBlaster(View view) {
-
-        //TODO Blast question with radiation
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
