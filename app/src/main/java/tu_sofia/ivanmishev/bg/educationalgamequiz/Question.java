@@ -1,5 +1,6 @@
 package tu_sofia.ivanmishev.bg.educationalgamequiz;
 
+import android.widget.Button;
 import android.widget.Switch;
 
 import java.util.ArrayList;
@@ -230,6 +231,7 @@ public class Question {
         setBlastQuestionUsed(true);
         return "Военоначалникът на извънземната раса Грох'ул използва мощен бластер върху въпросът и облъчи с радианция верният отговор!";
     }
+
 
     public String askAlien(){
         setAskAlienUsed(true);

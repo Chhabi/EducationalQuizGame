@@ -144,12 +144,16 @@ public class GameScreen extends Activity {
 
         sessionPointsText.setText("Точки: "+getSessionPoints());
         randomPointsForCurrentAnswerText.setText("+" + questionsInList.getFirst().getDifficulty() +" т.");
-        sessionQuestionCounterText.setText(questionNumber + " въпрос.");
+        sessionQuestionCounterText.setText(questionNumber + " въпрос");
         questionText.setText(questionsInList.getFirst().getQuestion());
         aButton.setText(questionsInList.getFirst().getPositionA());
         bButton.setText(questionsInList.getFirst().getPositionB());
         cButton.setText(questionsInList.getFirst().getPositionC());
         dButton.setText(questionsInList.getFirst().getPositionD());
+        aButton.setBackgroundResource(R.drawable.custom_button);
+        bButton.setBackgroundResource(R.drawable.custom_button);
+        cButton.setBackgroundResource(R.drawable.custom_button);
+        dButton.setBackgroundResource(R.drawable.custom_button);
 
     }
 
@@ -242,13 +246,26 @@ public class GameScreen extends Activity {
         AlertDialog alertDialog = alertDialogBuilder.create();
 
         alertDialog.show();
-
+        blastCAnswer();
         fiftyButton.setClickable(false);
         fiftyButton.setBackgroundResource(R.drawable.button_pressed);
         fiftyButton.setText("X");
     }
 
+    private void blastCAnswer(){
 
+        if(Question.isBlastQuestionUsed()){
+            if(aButton.getText().toString().equals(questionsInList.get(0).getRightAnswer())){
+                aButton.setBackgroundResource(R.drawable.radiation_button);
+            }else if(bButton.getText().toString().equals(questionsInList.get(0).getRightAnswer())){
+                    bButton.setBackgroundResource(R.drawable.radiation_button);
+            }else if(cButton.getText().toString().equals(questionsInList.get(0).getRightAnswer())){
+                    cButton.setBackgroundResource(R.drawable.radiation_button);
+            }else{
+                dButton.setBackgroundResource(R.drawable.radiation_button);
+            }
+        }
+    }
 
     public void useWiseAlienButton(View view) {
 
