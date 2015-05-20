@@ -47,8 +47,6 @@ public class GameScreen extends Activity {
 
     private Button mButton;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
