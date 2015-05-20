@@ -52,13 +52,13 @@ public class Question {
             case 1: randomNum = (rand.nextInt((max - min) + 1) + min) * bonus();
                 break;
 
-            case 2: randomNum = (rand.nextInt((max - min) + 1) + min) * bonus();
+            case 2: randomNum = (rand.nextInt((max - min) + 3) + min) * bonus();
                 break;
 
-            case 3: randomNum = (rand.nextInt((max - min) + 1) + min) * bonus();
+            case 3: randomNum = (rand.nextInt((max - min) + 5) + min) * bonus();
                 break;
 
-            case 4: randomNum = (rand.nextInt((max - min) + 1) + min) * bonus();
+            case 4: randomNum = (rand.nextInt((max - min) + 7) + min) * bonus();
                 break;
 
             default: randomNum = (rand.nextInt((max - min) + 1) + min) * bonus();

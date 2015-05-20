@@ -27,6 +27,7 @@ public class GameScreen extends Activity {
 
     //session points
     private int sessionPoints = 0;
+    private int tempSessionPoints = 0;
 
     Button fiftyButton, friendButton, crowdButton;
     TextView sessionPointsText, randomPointsForCurrentAnswerText, sessionQuestionCounterText, questionText;
@@ -46,6 +47,8 @@ public class GameScreen extends Activity {
     private final MyHandler mHandler = new MyHandler(this);
 
     private Button mButton;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,7 +141,7 @@ public class GameScreen extends Activity {
     }
 
     private void setCurrentQuestion(){
-
+        setTempSessionPoints(questionsInList.getFirst().getDifficulty());
         sessionPointsText.setText("Точки: "+getSessionPoints());
         randomPointsForCurrentAnswerText.setText("+" + questionsInList.getFirst().getDifficulty() +" т.");
         sessionQuestionCounterText.setText(questionNumber + " въпрос");
@@ -187,10 +190,18 @@ public class GameScreen extends Activity {
         return sessionPoints;
     }
 
+    public int getTempSessionPoints() {
+        return tempSessionPoints;
+    }
+
+    public void setTempSessionPoints(int tempSessionPoints) {
+        this.tempSessionPoints = tempSessionPoints;
+    }
+
 
     public void countSessionPoints() {
 
-        sessionPoints = sessionPoints + questionsInList.getFirst().getDifficulty();
+        sessionPoints = sessionPoints + getTempSessionPoints();
         //Toast.makeText(this, "Current points " + sessionPoints, Toast.LENGTH_SHORT).show();
         SharedPreferences sharedPreferences = getSharedPreferences("gameScore", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
