@@ -75,7 +75,6 @@ public class HomeScreen extends Activity {
 
     @Override
     protected void onDestroy() {
-        //TODO save current score of the user
         super.onDestroy();
     }
 

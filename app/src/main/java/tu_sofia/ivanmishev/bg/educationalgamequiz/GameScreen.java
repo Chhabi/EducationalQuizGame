@@ -199,8 +199,9 @@ public class GameScreen extends Activity {
         this.questionNumber++;
     }
 
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+   @Override
+   protected void onRestoreInstanceState(Bundle savedInstanceState) {
+
         super.onRestoreInstanceState(savedInstanceState);
 
         String savedSessionPointsText = savedInstanceState.getString("saveSessionPoints");
@@ -209,6 +210,7 @@ public class GameScreen extends Activity {
         int savedSessionPoints = savedInstanceState.getInt("sessionPoints");
         int savedQuestionNumber = savedInstanceState.getInt("questionNumber");
         int savedRandomPoints = savedInstanceState.getInt("randomPoints");
+
 
         @SuppressWarnings("unchecked")
         LinkedList<Question>  savedList = (LinkedList<Question>) savedInstanceState.getSerializable("savedList");
@@ -235,10 +237,12 @@ public class GameScreen extends Activity {
         cButton.setText(savedCButtonText);
         dButton.setText(savedDButtonText);
 
+
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
+
         super.onSaveInstanceState(outState);
 
         //saved state for current points
@@ -274,8 +278,11 @@ public class GameScreen extends Activity {
         outState.putString("saveBButtonText", saveBButtonText);
         outState.putString("saveCButtonText", saveCButtonText);
         outState.putString("saveDButtonText", saveDButtonText);
+
+        //TODO somehow to fix that because it cause game crash when activity switch states... Logic is good and work on activity recreation
         LinkedList<Question> savedList = getQuestionsInList();
         outState.putSerializable("savedList", savedList);
+
 
     }
 

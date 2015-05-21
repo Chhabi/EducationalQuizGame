@@ -41,7 +41,6 @@ public class Question {
     }
 
 
-    //TODO different scores for different difficulties
     public int RandomPointGeneratorForCurrentAnswer(){
 
         int min = 2;
