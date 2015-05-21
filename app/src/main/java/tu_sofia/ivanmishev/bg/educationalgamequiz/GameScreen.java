@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
@@ -28,6 +29,7 @@ public class GameScreen extends Activity {
     //session points
     private int sessionPoints = 0;
     private int tempSessionPoints = 0;
+    private int pointsForCurrentQuestion = 0;
 
     Button fiftyButton, friendButton, crowdButton;
     TextView sessionPointsText, randomPointsForCurrentAnswerText, sessionQuestionCounterText, questionText;
@@ -140,10 +142,17 @@ public class GameScreen extends Activity {
         }
     }
 
+    private int pointsForCurrentQuestion(){
+        int localPoints = questionsInList.getFirst().getDifficulty();
+        setPointsForCurrentQuestion(localPoints);
+        return getPointsForCurrentQuestion();
+
+    }
+
     private void setCurrentQuestion(){
         setTempSessionPoints(questionsInList.getFirst().getDifficulty());
         sessionPointsText.setText("Точки: "+getSessionPoints());
-        randomPointsForCurrentAnswerText.setText("+" + questionsInList.getFirst().getDifficulty() +" т.");
+        randomPointsForCurrentAnswerText.setText("+" + pointsForCurrentQuestion() +" т.");
         sessionQuestionCounterText.setText(questionNumber + " въпрос");
         questionText.setText(questionsInList.getFirst().getQuestion());
         aButton.setText(questionsInList.getFirst().getPositionA());
@@ -157,8 +166,121 @@ public class GameScreen extends Activity {
 
     }
 
+    public int getPointsForCurrentQuestion() {
+        return pointsForCurrentQuestion;
+    }
+
+    public void setPointsForCurrentQuestion(int pointsForCurrentQuestion) {
+        this.pointsForCurrentQuestion = pointsForCurrentQuestion;
+    }
+
+    public LinkedList<Question> getQuestionsInList() {
+        return questionsInList;
+    }
+
+    public void setQuestionsInList(LinkedList<Question> questionsInList) {
+        this.questionsInList = questionsInList;
+    }
+
+    public void setSessionPoints(int sessionPoints) {
+        this.sessionPoints = sessionPoints;
+    }
+
+    public int getQuestionNumber() {
+        return questionNumber;
+    }
+
+    public void setQuestionNumber(int questionNumber) {
+        this.questionNumber = questionNumber;
+    }
+
     public void questionNumberIncrement(){
         this.questionNumber++;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        String savedSessionPointsText = savedInstanceState.getString("saveSessionPoints");
+        String savedRandomPointsText = savedInstanceState.getString("randomPointsText");
+        String savedQuestionCounter = savedInstanceState.getString("sessionCounterText");
+        int savedSessionPoints = savedInstanceState.getInt("sessionPoints");
+        int savedQuestionNumber = savedInstanceState.getInt("questionNumber");
+        int savedRandomPoints = savedInstanceState.getInt("randomPoints");
+        LinkedList<Question> savedList = (LinkedList<Question>) savedInstanceState.getSerializable("savedList");
+
+        sessionPointsText.setText(savedSessionPointsText);
+        randomPointsForCurrentAnswerText.setText(savedRandomPointsText);
+        sessionQuestionCounterText.setText(savedQuestionCounter);
+        setSessionPoints(savedSessionPoints);
+        setQuestionNumber(savedQuestionNumber);
+        setQuestionsInList(savedList);
+        setPointsForCurrentQuestion(savedRandomPoints);
+
+
+        String savedQuestionText = savedInstanceState.getString("saveQuestionText");
+        String savedAButtonText = savedInstanceState.getString("saveAButtonText");
+        String savedBButtonText = savedInstanceState.getString("saveBButtonText");
+        String savedCButtonText = savedInstanceState.getString("saveCButtonText");
+        String savedDButtonText = savedInstanceState.getString("saveDButtonText");
+
+        questionText.setText(savedQuestionText);
+        aButton.setText(savedAButtonText);
+        bButton.setText(savedBButtonText);
+        cButton.setText(savedCButtonText);
+        dButton.setText(savedDButtonText);
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        //TODO saved state of joker buttons
+  /*      Button b = fiftyButton;
+        Button c = crowdButton;
+        Button d = friendButton;
+
+        outState.putAll(b);*/
+
+
+        //saved state for current points
+        String saveSessionPointsText = sessionPointsText.getText().toString();
+        outState.putString("saveSessionPoints", saveSessionPointsText);
+
+        String saveRandomPointsText = randomPointsForCurrentAnswerText.getText().toString();
+        outState.putString("randomPointsText", saveRandomPointsText);
+
+        String saveSessionQuestionCounter = sessionQuestionCounterText.getText().toString();
+        outState.putString("sessionCounterText", saveSessionQuestionCounter);
+
+        int saveSessionPoints = getSessionPoints();
+        outState.putInt("sessionPoints", saveSessionPoints);
+
+        int saveQuestionNumber = getQuestionNumber();
+        outState.putInt("questionNumber", saveQuestionNumber);
+
+        int saveRandomPoints = getPointsForCurrentQuestion();
+        outState.putInt("randomPoints", saveRandomPoints);
+
+
+        //saved state of current questionList
+
+        String saveQuestionText = questionText.getText().toString();
+        String saveAButtonText = aButton.getText().toString();
+        String saveBButtonText = bButton.getText().toString();
+        String saveCButtonText = cButton.getText().toString();
+        String saveDButtonText = dButton.getText().toString();
+
+        outState.putString("saveQuestionText", saveQuestionText);
+        outState.putString("saveAButtonText", saveAButtonText);
+        outState.putString("saveBButtonText", saveBButtonText);
+        outState.putString("saveCButtonText", saveCButtonText);
+        outState.putString("saveDButtonText", saveDButtonText);
+        LinkedList<Question> savedList = getQuestionsInList();
+        outState.putSerializable("savedList", savedList);
+
     }
 
     @Override
@@ -200,6 +322,11 @@ public class GameScreen extends Activity {
 
 
     public void countSessionPoints() {
+
+        if(getPointsForCurrentQuestion()>0){
+            setTempSessionPoints(getPointsForCurrentQuestion());
+            setPointsForCurrentQuestion(0);
+        }
 
         sessionPoints = sessionPoints + getTempSessionPoints();
         //Toast.makeText(this, "Current points " + sessionPoints, Toast.LENGTH_SHORT).show();
@@ -322,6 +449,7 @@ public class GameScreen extends Activity {
         crowdButton.setText("X");
 
     }
+
 
     private static class MyHandler extends Handler {
         private final WeakReference<GameScreen> mActivity;
