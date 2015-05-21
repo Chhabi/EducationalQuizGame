@@ -103,6 +103,7 @@ public class GameScreen extends Activity {
         iterator = (ListIterator) questionsInList.iterator();
 
         setCurrentQuestion();
+        checkForUsedHelpers();
     }
 
     //OnClick listener for game session
@@ -208,7 +209,10 @@ public class GameScreen extends Activity {
         int savedSessionPoints = savedInstanceState.getInt("sessionPoints");
         int savedQuestionNumber = savedInstanceState.getInt("questionNumber");
         int savedRandomPoints = savedInstanceState.getInt("randomPoints");
-        LinkedList<Question> savedList = (LinkedList<Question>) savedInstanceState.getSerializable("savedList");
+
+        @SuppressWarnings("unchecked")
+        LinkedList<Question>  savedList = (LinkedList<Question>) savedInstanceState.getSerializable("savedList");
+
 
         sessionPointsText.setText(savedSessionPointsText);
         randomPointsForCurrentAnswerText.setText(savedRandomPointsText);
@@ -236,14 +240,6 @@ public class GameScreen extends Activity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-
-        //TODO saved state of joker buttons
-  /*      Button b = fiftyButton;
-        Button c = crowdButton;
-        Button d = friendButton;
-
-        outState.putAll(b);*/
-
 
         //saved state for current points
         String saveSessionPointsText = sessionPointsText.getText().toString();
@@ -448,6 +444,24 @@ public class GameScreen extends Activity {
         crowdButton.setBackgroundResource(R.drawable.button_pressed);
         crowdButton.setText("X");
 
+    }
+
+    private void checkForUsedHelpers(){
+        if(Question.isBlastQuestionUsed()){
+            fiftyButton.setClickable(false);
+            fiftyButton.setBackgroundResource(R.drawable.button_pressed);
+            fiftyButton.setText("X");
+        }
+        if(Question.isAskAlienUsed()){
+            friendButton.setClickable(false);
+            friendButton.setBackgroundResource(R.drawable.button_pressed);
+            friendButton.setText("X");
+        }
+        if(Question.isAskConsortiumUsed()){
+            crowdButton.setClickable(false);
+            crowdButton.setBackgroundResource(R.drawable.button_pressed);
+            crowdButton.setText("X");
+        }
     }
 
 

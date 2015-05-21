@@ -239,6 +239,12 @@ public class Question {
         return "Мъдрецът на извънземните мисли, че верният отговор е: " + cAnswer;
     }
 
+    public static void setHelpers(){
+        setAskAlienUsed(false);
+        setAskConsortiumUsed(false);
+        setBlastQuestionUsed(false);
+    }
+
     public String askConsortium(){
         setAskConsortiumUsed(true);
         int cAnswer = 40;

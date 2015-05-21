@@ -80,7 +80,7 @@ public class HomeScreen extends Activity {
     }
 
     public void startNewGame(View view) {
-
+        Question.setHelpers();
         Intent intent = new Intent(this, GameScreen.class);
         startActivity(intent);
         finish();

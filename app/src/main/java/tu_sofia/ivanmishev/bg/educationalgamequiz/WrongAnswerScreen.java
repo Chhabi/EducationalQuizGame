@@ -60,6 +60,7 @@ public class WrongAnswerScreen extends Activity {
     }
 
     public void playAgain(View view) {
+        Question.setHelpers();
         Intent intent = new Intent(this, GameScreen.class);
         startActivity(intent);
         finish();
