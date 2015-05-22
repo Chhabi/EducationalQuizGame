@@ -279,7 +279,7 @@ public class GameScreen extends Activity {
         outState.putString("saveCButtonText", saveCButtonText);
         outState.putString("saveDButtonText", saveDButtonText);
 
-        //TODO somehow to fix that because it cause game crash when activity switch states... Logic is good and work on activity recreation
+        //fixed crash when we try to save that list of objects in bundle, now Question implements Serializable
         LinkedList<Question> savedList = getQuestionsInList();
         outState.putSerializable("savedList", savedList);
 

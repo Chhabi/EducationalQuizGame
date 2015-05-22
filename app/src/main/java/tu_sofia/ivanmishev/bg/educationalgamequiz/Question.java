@@ -1,8 +1,11 @@
 package tu_sofia.ivanmishev.bg.educationalgamequiz;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.widget.Button;
 import android.widget.Switch;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -12,7 +15,7 @@ import java.util.Random;
 /**
  * Created by Admin on 5.4.2015 г..
  */
-public class Question {
+public class Question implements Serializable {
     private String question= "";
     private String correctAnswer="";
     private String wrongAnswer1="";
@@ -190,7 +193,6 @@ public class Question {
         Collections.shuffle(allAnswersList);
         Iterator iterator = allAnswersList.iterator();
 
-
         while(iterator.hasNext()){
             if(getPositionA().equals("")){
                 setPositionA(iterator.next().toString());
@@ -204,7 +206,6 @@ public class Question {
         }
 
     }
-
 //    //check for one wrong answer that will stay in object field
 //    public void useFiftyFifty(){
 //        if (isFiftyFiftyIsUsed() == false){
@@ -263,5 +264,36 @@ public class Question {
                 getWrongAnswer3() + " " + wAnswer3 + "%";
 
     }
+/*    @Override
+    public int describeContents() {
+        return 0;
+    }
 
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(question);
+        dest.writeString(correctAnswer);
+        dest.writeString(wrongAnswer1);
+        dest.writeString(wrongAnswer2);
+        dest.writeString(wrongAnswer3);
+        dest.writeString(positionA);
+        dest.writeString(positionB);
+        dest.writeString(positionC);
+        dest.writeString(positionD);
+        dest.writeInt(difficulty);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Question> CREATOR = new Parcelable.Creator<Question>() {
+        @Override
+        public Question createFromParcel(Parcel in) {
+
+            return new Question(in);
+        }
+
+        @Override
+        public Question[] newArray(int size) {
+            return new Question[size];
+        }
+    };*/
 }
