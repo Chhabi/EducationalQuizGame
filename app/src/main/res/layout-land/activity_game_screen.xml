@@ -83,7 +83,8 @@
             android:textAlignment="center"
             android:paddingTop="4dp"
             android:id="@+id/sessionQuestionCounterText"
-            android:textColor="#ffffff"/>
+            android:textColor="#ffffff"
+            android:layout_marginRight="10dp"/>
     </LinearLayout>
 
     <LinearLayout
