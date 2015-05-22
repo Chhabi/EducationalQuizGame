@@ -50,7 +50,11 @@ public class GameScreen extends Activity {
 
     private Button mButton;
 
-
+    //TODO Animation on clicked correct and wrong answers
+    //TODO Some text converter that scale text to it's widget boundaries
+    //TODO Eventually some other login screen with user name input for first time
+    //TODO Check for needed permissions in manifest
+    //TODO To add more questions to DB + refactor current q's
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,9 +140,9 @@ public class GameScreen extends Activity {
 
 
     }
-    //TODO this method does not let user to answer to 50-th question and isEmpty never return true
+    //When user reach 50 question end of the game
     public void checkIfLastQuestion(){
-        if(questionsInList.isEmpty() || questionNumber == 50){
+        if(questionNumber == 50){
             endGame();
         }
     }
@@ -358,7 +362,8 @@ public class GameScreen extends Activity {
 
     public void endGame(){
         Intent intent = new Intent(this, EndGameScreen.class);
-        intent.putExtra("currentPoints", getSessionPoints());
+        int temp = getTempSessionPoints() + getSessionPoints();
+        intent.putExtra("currentPoints", temp);
         startActivity(intent);
         finish();
     }
@@ -486,7 +491,6 @@ public class GameScreen extends Activity {
 
             }
         }
-
 
     }
 
